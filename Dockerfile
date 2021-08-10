@@ -7,4 +7,4 @@ RUN python -m pip install --upgrade "pip < 21.0"
 RUN git clone https://github.com/vorgoron/tacotron.git
 WORKDIR /app
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
