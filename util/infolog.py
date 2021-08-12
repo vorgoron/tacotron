@@ -23,11 +23,12 @@ def init(filename, run_name, slack_url=None):
 
 
 def log(msg, slack=False):
-  print(msg)
+  _msg = msg.encode('utf-8')
+  print(_msg)
   if _file is not None:
-    _file.write('[%s]  %s\n' % (datetime.now().strftime(_format)[:-3], msg))
+    _file.write('[%s]  %s\n' % (datetime.now().strftime(_format)[:-3], _msg))
   if slack and _slack_url is not None:
-    Thread(target=_send_slack, args=(msg,)).start()
+    Thread(target=_send_slack, args=(_msg,)).start()
 
 
 def _close_logfile():
