@@ -114,7 +114,7 @@ def train(log_dir, args):
           audio.save_wav(waveform, os.path.join(log_dir, 'step-%d-audio.wav' % step))
           plot.plot_alignment(alignment, os.path.join(log_dir, 'step-%d-align.png' % step),
             info='%s, %s, %s, step=%d, loss=%.5f' % (args.model, commit, time_string(), step, loss))
-          log('Input: %s' % sequence_to_text(input_seq))
+          # log('Input: %s' % sequence_to_text(input_seq))
 
     except Exception as e:
       log('Exiting due to exception: %s' % e, slack=True)
