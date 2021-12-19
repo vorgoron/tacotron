@@ -8,3 +8,5 @@ RUN git clone https://github.com/vorgoron/tacotron.git
 WORKDIR /app
 COPY . .
 RUN pip3 install -r requirements.txt
+EXPOSE 9000
+CMD [ "python3 demo_server.py --checkpoint models/udm_tts_model/model.ckpt-100000" ]
