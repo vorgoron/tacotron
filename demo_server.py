@@ -5,7 +5,7 @@ import os
 from synthesizer import Synthesizer
 
 
-html_body = '''<html><title>Demo</title>
+html_body = '''<html><title>Лыдӟись</title>
 <style>
 body {padding: 16px; font-family: sans-serif; font-size: 14px; color: #444}
 input {font-size: 14px; padding: 8px 12px; outline: none; border: 1px solid #ddd}
@@ -19,8 +19,8 @@ button[disabled] {opacity: 0.4; cursor: default}
 </style>
 <body>
 <form>
-  <input id="text" type="text" size="40" placeholder="Enter Text">
-  <button id="button" name="synthesize">Speak</button>
+  <input id="text" type="text" size="40" placeholder="Текст гожтэлэ">
+  <button id="button" name="synthesize">Лыдӟоно</button>
 </form>
 <p id="message"></p>
 <audio id="audio" controls autoplay hidden></audio>
@@ -30,7 +30,7 @@ q('#text').focus()
 q('#button').addEventListener('click', function(e) {
   text = q('#text').value.trim()
   if (text) {
-    q('#message').textContent = 'Synthesizing...'
+    q('#message').textContent = 'Возьмалэ...'
     q('#button').disabled = true
     q('#audio').hidden = true
     synthesize(text)
@@ -49,7 +49,7 @@ function synthesize(text) {
       q('#audio').src = URL.createObjectURL(blob)
       q('#audio').hidden = false
     }).catch(function(err) {
-      q('#message').textContent = 'Error: ' + err.message
+      q('#message').textContent = 'Янгыш: ' + err.message
       q('#button').disabled = false
     })
 }
